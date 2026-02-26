@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管综数学·质数考点全解</title>
+    <style>
+        /* 整体样式 — 兼容Word与浏览器 */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: '微软雅黑', '宋体', Arial, sans-serif;
+            background-color: #f2f5f9;
+            margin: 0;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .prime-card {
+            max-width: 1000px;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 12px 28px rgba(0,20,50,0.15);
+            border-radius: 24px;
+            padding: 35px 40px;
+            margin-bottom: 30px;
+            border: 1px solid #c2d1e0;
+        }
+        h1 {
+            font-size: 34px;
+            color: #1e3c5c;
+            border-left: 10px solid #b22222;
+            padding-left: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .subhead {
+            font-size: 18px;
+            color: #3c5a7d;
+            margin-bottom: 20px;
+            padding-left: 30px;
+            border-bottom: 1px dashed #9bb7d4;
+            padding-bottom: 12px;
+        }
+        h2 {
+            background-color: #ecf3fa;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 26px;
+            color: #163956;
+            border-left: 6px solid #b22222;
+            margin: 30px 0 20px 0;
+        }
+        h3 {
+            font-size: 22px;
+            border-bottom: 2px solid #b0c9e0;
+            padding-bottom: 6px;
+            color: #1b4a6b;
+            margin-top: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16.5px;
+            background: white;
+        }
+        th {
+            background-color: #2a4b7c;
+            color: white;
+            font-weight: 600;
+            padding: 12px 15px;
+            border: 1px solid #123456;
+        }
+        td {
+            padding: 12px 18px;
+            border: 1px solid #a0b9cf;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f6f9fe;
+        }
+        .feature-box {
+            background-color: #eef5fc;
+            border-left: 8px solid #b22222;
+            padding: 16px 24px;
+            border-radius: 16px;
+            margin: 20px 0;
+            font-size: 17px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+        .method-block {
+            background-color: #fcf9f0;
+            border-radius: 20px;
+            padding: 18px 25px;
+            margin: 20px 0;
+            border: 1px solid #e4d5b6;
+        }
+        .method-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #8b3c1c;
+            margin-bottom: 8px;
+        }
+        .trap {
+            background: #fff0f0;
+            color: #a52a2a;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 5px 5px 5px 0;
+            border: 1px solid #e0a8a8;
+        }
+        .download-btn {
+            background: #1e3c5c;
+            border: none;
+            color: white;
+            font-size: 19px;
+            font-weight: 500;
+            padding: 15px 38px;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(20,40,70,0.4);
+            transition: 0.15s;
+            border: 1px solid #0f2b41;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background: #2b5797;
+        }
+        .footer-note {
+            color: #4e657b;
+            text-align: center;
+            font-size: 15px;
+        }
+        hr {
+            border: 1px solid #c4d3e3;
+            margin: 30px 0;
+        }
+        .group-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .group-item {
+            background: #2b4f7c;
+            color: white;
+            border-radius: 40px;
+            padding: 8px 22px;
+            font-size: 17px;
+            font-weight: 500;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        .badge-red {
+            background-color: #b22222;
+            color: white;
+            border-radius: 30px;
+            padding: 3px 14px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 15px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="prime-card" id="primeKnowledge">
+    <h1>🔢 管综数学·质数考点精讲</h1>
+    <div class="subhead">基于“简单定义” · 四步精通质数 · 附管综高频陷阱</div>
+
+    <!-- 1. 基础定义部分 -->
+    <h2>📌 1. 质数核心定义</h2>
+    <div style="background: #e9f0f9; border-radius: 18px; padding: 18px 25px;">
+        <p style="font-size: 19px; margin: 10px 0;"><span class="badge-red">定义</span> <strong>质数</strong>（素数）—— 一个<strong>大于1的自然数</strong>，除了1和它自身以外，不再有其他正因数。</p>
+        <p style="font-size: 18px; margin: 15px 0;"><span class="badge-red">判断标准</span> 问自己：除了1和它本身，能否找到第三个整数整除它？</p>
+        <ul style="font-size: 17px; line-height: 1.8;">
+            <li>✅ 找不到 → <strong>质数</strong> (例：2,3,5,7,11...)</li>
+            <li>❌ 能找到 → <strong>合数</strong> (例：4,6,8,9,10...)</li>
+        </ul>
+    </div>
+
+    <!-- 2. 最常用质数分组 -->
+    <h2>📚 2. 最常用的质数（务必背下来）</h2>
+    <p style="font-size: 16.5px; color: #2f4a62;">100以内质数 · 分组记忆（管综高频范围）</p>
+    <div class="group-list">
+        <span class="group-item">20以内：2,3,5,7,11,13,17,19</span>
+        <span class="group-item">20-50：23,29,31,37,41,43,47</span>
+        <span class="group-item">50-100：53,59,61,67,71,73,79,83,89,97</span>
+    </div>
+    <table>
+        <tr><th style="width:30%">区间</th><th>质数列表</th><th>数量</th></tr>
+        <tr><td>1~20</td><td>2,3,5,7,11,13,17,19</td><td>8个</td></tr>
+        <tr><td>21~50</td><td>23,29,31,37,41,43,47</td><td>7个</td></tr>
+        <tr><td>51~100</td><td>53,59,61,67,71,73,79,83,89,97</td><td>10个</td></tr>
+    </table>
+
+    <!-- 3. 三大特性 + 考点 -->
+    <h2>⚡ 3. 质数的三大特性 & 管综考点</h2>
+
+    <div class="feature-box">
+        <span style="font-size: 24px; font-weight:800;">❶</span> <strong style="font-size: 20px;">2 是唯一的偶质数</strong><br>
+        <p style="margin: 10px 0 5px; font-size:17px;">所有偶数中只有2是质数，其他偶数都是合数（能被2整除）。<br>
+        <span style="background:#fedea5; padding:3px 10px; border-radius:20px;">📘 常见考法：两质数和为奇数→其中必有一个是2。</span><br>
+        例：两个质数相加等于25 → 25奇数，只能“偶+奇”，偶质数必为2，另一个为23。</p>
+    </div>
+
+    <div class="feature-box">
+        <span style="font-size: 24px; font-weight:800;">❷</span> <strong style="font-size: 20px;">1 既不是质数也不是合数</strong><br>
+        <p style="margin: 8px 0 5px;">1只有一个因数（本身），不符合质数定义（两个不同因数），也不符合合数定义（至少三个因数）。</p>
+    </div>
+
+    <div class="feature-box">
+        <span style="font-size: 24px; font-weight:800;">❸</span> <strong style="font-size: 20px;">质数不一定都是奇数</strong><br>
+        <p style="margin: 8px 0;">因为2的存在，质数可以是奇数也可以是偶数。除2外所有质数都是奇数。</p>
+    </div>
+
+    <!-- 4. 高效记忆窍门 (重点) -->
+    <h2>🧠 4. 针对管综考试的高效记忆窍门</h2>
+
+    <div class="method-block">
+        <div class="method-title">🔍 方法一：特征排除法（最实用，推荐⭐）</div>
+        <p><strong>第1步：排除所有偶数（除了2）</strong> —— 4,6,8,10,... 全部不是质数。</p>
+        <p><strong>第2步：排除所有5的倍数（除了5本身）</strong> —— 所有以5结尾的数(15,25,35...)都不是质数。</p>
+        <p><strong>第3步：记住几个特殊“陷阱数”</strong> —— 考试最爱考的合数伪装者：</p>
+        <div>
+            <span class="trap">91 = 7×13</span>
+            <span class="trap">87 = 3×29</span>
+            <span class="trap">57 = 3×19</span>
+            <span class="trap">77 = 7×11</span>
+            <span class="trap">49 = 7×7</span>
+            <span class="trap">119 = 7×17</span>
+        </div>
+        <p><strong>第4步：剩下的自然就是质数</strong> —— 经过前三步，100以内质数基本浮出水面。</p>
+    </div>
+
+    <div class="method-block">
+        <div class="method-title">🧻 方法二：筛子法（埃拉托色尼筛法·理解本质）</div>
+        <ol style="font-size: 16.5px; line-height: 2;">
+            <li>涂掉1（不是质数）</li>
+            <li>保留2，涂掉所有2的倍数 (4,6,8...)</li>
+            <li>保留3，涂掉所有3的倍数 (9,15,21...)</li>
+            <li>保留5，涂掉所有5的倍数 (25,35,55...)</li>
+            <li>保留7，涂掉所有7的倍数 (49,77,91...)</li>
+            <li>剩余未被涂掉的数（且大于1）即为质数。自己画一遍印象深刻。</li>
+        </ol>
+    </div>
+
+    <div class="method-block">
+        <div class="method-title">🎯 方法三：高频考点定向记忆（应试专用）</div>
+        <p>管综最爱考的小范围质数：<strong>2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97</strong>。<br>
+        尤其注意 <span class="trap" style="background:#f5cfcf;">91</span>、<span class="trap">57</span>、<span class="trap">87</span> 这三大陷阱，经常冒充质数。</p>
+    </div>
+
+    <!-- 常见考法例题 -->
+    <h2>📝 附：质数经典考题示例</h2>
+    <table>
+        <tr><th>题型</th><th>思路</th><th>解答</th></tr>
+        <tr>
+            <td>两个质数之和为20，求它们的积最大可能？</td>
+            <td>20是偶数，必含偶质数2（偶+偶不行，因为偶质数只有2，所以结构为2+奇质数）</td>
+            <td>20-2=18，奇质数对(5,13)或(7,11)；积分别为130、154，最大154。</td>
+        </tr>
+        <tr>
+            <td>若三个不同质数之和为16，求它们乘积？</td>
+            <td>16为偶，可能含2 (偶+奇+奇) 。若不含2，则奇+奇+奇=奇，不可能为16。</td>
+            <td>16-2=14，两奇质数对 (3,11) 或 (7,7)（重复不符合不同），所以只能是3+11=14，三个质数为2,3,11，积=66。</td>
+        </tr>
+    </table>
+
+    <!-- 小贴士区 -->
+    <hr>
+    <div style="background: #e3f0fa; border-radius: 18px; padding: 15px 25px;">
+        <p style="font-size: 17px;"><span style="background:#222; color:white; padding:2px 10px; border-radius:20px;">💡 记忆卡片</span> &nbsp; 唯一偶质数 <strong>2</strong>；1不是质数也不是合数；三位陷阱数：91(7×13), 87(3×29), 57(3×19), 77(7×11)。</p>
+        <p>✅ 使用排除法时，先看奇偶，再看末尾(5的倍数)，最后检查7,11,13的倍数。</p>
+    </div>
+
+    <!-- 收尾说明 -->
+    <p style="color: #4a5e75; font-size: 15px; text-align: right; margin-top: 25px;">—— 完全基于管综考纲·质数专题 · 可一键下载Word ——</p>
+</div>
+
+<div style="display: flex; justify-content: center;">
+    <button class="download-btn" id="downloadPrimeBtn">
+        ⬇️ 下载 Word 格式文档 (.doc)
+    </button>
+</div>
+<div class="footer-note">
+    ⚡ 点击下载后使用 Microsoft Word 打开，保留全部样式，方便打印背诵。
+</div>
+
+<script>
+    (function() {
+        const downloadBtn = document.getElementById('downloadPrimeBtn');
+
+        function getFullHTML() {
+            const styleElem = document.querySelector('style').outerHTML;
+            const primeCardHTML = document.getElementById('primeKnowledge').outerHTML;
+
+            return `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>管综质力·质数考点全解</title>
+    ${styleElem}
+    <style>
+        body { background: white; padding: 30px; }
+        .prime-card { box-shadow: none; border: 1px solid #999; }
+        .download-btn { display: none; }
+    </style>
+</head>
+<body>
+    ${primeCardHTML}
+    <p style="text-align:center; color: #1e3c5c; margin-top:30px;">—— 质数不迷茫 · 管综高分基石 ——</p>
+</body>
+</html>`;
+        }
+
+        downloadBtn.addEventListener('click', function () {
+            const fullHtml = getFullHTML();
+            const blob = new Blob([fullHtml], { type: 'application/msword' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = '管综数学_质数专题.doc';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        });
+    })();
+</script>
+
+<!-- 注：该页面完全兼容Word，包含所有质数定义、分组、特性、排除法、筛法及陷阱总结。 -->
+</body>
+</html>
