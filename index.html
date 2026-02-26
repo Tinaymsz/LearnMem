@@ -1,380 +1,102 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管综数学·核心考点与必备公式</title>
-    <style>
-        /* 整体样式 —— 兼容Word及现代浏览器 */
-        body {
-            font-family: '微软雅黑', '宋体', Arial, sans-serif;
-            background-color: #f5f7fa;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .document-card {
-            max-width: 1100px;
-            width: 100%;
-            background-color: #ffffff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-radius: 18px;
-            padding: 30px 35px;
-            margin-bottom: 25px;
-            border: 1px solid #d0d7de;
-        }
-        h1 {
-            font-size: 32px;
-            color: #1e3c5c;
-            border-left: 10px solid #2b5797;
-            padding-left: 20px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        .subhead {
-            color: #4a6f8e;
-            font-size: 18px;
-            margin-top: -5px;
-            margin-bottom: 25px;
-            padding-left: 30px;
-            border-bottom: 1px dashed #b3c4d1;
-            padding-bottom: 12px;
-        }
-        h2 {
-            font-size: 24px;
-            background-color: #eef3f9;
-            padding: 8px 18px;
-            border-radius: 30px;
-            color: #1e4660;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            border-left: 5px solid #1e3c5c;
-        }
-        h3 {
-            font-size: 20px;
-            margin: 20px 0 10px 0;
-            color: #204b6a;
-            border-bottom: 2px solid #cfdeed;
-            padding-bottom: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 18px 0;
-            font-size: 16px;
-            word-spacing: 0;
-            background-color: white;
-        }
-        th {
-            background-color: #2b5797;
-            color: white;
-            font-weight: 600;
-            padding: 12px 10px;
-            text-align: left;
-            border: 1px solid #1d3f68;
-        }
-        td {
-            padding: 12px 15px;
-            border: 1px solid #b0c4de;
-            vertical-align: top;
-            background-color: #fdfdfd;
-        }
-        tr:nth-child(even) td {
-            background-color: #f8fafd;
-        }
-        .module-badge {
-            display: inline-block;
-            background-color: #d4e3fd;
-            padding: 5px 15px;
-            border-radius: 25px;
-            font-weight: 600;
-            color: #113a5e;
-            margin-right: 10px;
-        }
-        .formula {
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            background-color: #f2f6fc;
-            padding: 4px 10px;
-            border-radius: 8px;
-            border-left: 4px solid #2b5797;
-            margin: 8px 0;
-            font-size: 16px;
-            font-weight: 500;
-            color: #002244;
-        }
-        .note {
-            background-color: #fef9e7;
-            border-left: 6px solid #f4b742;
-            padding: 12px 20px;
-            border-radius: 10px;
-            margin: 25px 0 10px 0;
-            font-size: 16px;
-        }
-        ul, ol {
-            padding-left: 25px;
-            line-height: 1.7;
-        }
-        li {
-            margin: 6px 0;
-        }
-        .download-btn {
-            background: #1e3c5c;
-            border: none;
-            color: white;
-            font-size: 18px;
-            font-weight: 500;
-            padding: 14px 32px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,40,80,0.3);
-            transition: background 0.15s;
-            border: 1px solid #0f2b41;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        .download-btn:hover {
-            background: #2b5797;
-        }
-        .footer-note {
-            color: #5f6b7a;
-            font-size: 15px;
-            text-align: center;
-            margin-top: 20px;
-        }
-        kbd {
-            background: #eef0f2;
-            border-radius: 4px;
-            padding: 2px 6px;
-            border: 1px solid #bcc9d6;
-        }
-        hr {
-            border: 1px solid #cbd6e3;
-            margin: 25px 0;
-        }
-        .small-meta {
-            color: #3d5e78;
-            font-weight: 400;
-            font-size: 15px;
-        }
-    </style>
-</head>
-<body>
-    <div class="document-card" id="mathHandbook">
-        <h1>📐 管理类联考·数学核心考点 & 必备公式</h1>
-        <div class="subhead">依据大纲 · 四大模块 · 187考点浓缩 · 适用于199管综</div>
-
-        <!-- 知识总览表 -->
-        <table>
-            <tr><th style="width:20%">模块</th><th style="width:20%">分值占比</th><th>章节内容</th><th>考查重点</th></tr>
-            <tr><td><strong>算术</strong></td><td>≈20%</td><td>实数、比与比例、绝对值、平均数</td><td>概念性质、基本运算、灵活应用</td></tr>
-            <tr><td><strong>代数</strong></td><td>≈30%</td><td>整式分式、函数、方程不等式、数列</td><td>公式变形、方程求解、函数性质、通项求和</td></tr>
-            <tr><td><strong>几何</strong></td><td>≈30%</td><td>平面几何、解析几何、立体几何</td><td>图形性质、位置关系、公式计算、数形结合</td></tr>
-            <tr><td><strong>数据分析</strong></td><td>≈20%</td><td>排列组合、概率、数据描述</td><td>计数原理、概率模型、统计量计算</td></tr>
-        </table>
-
-        <!-- 算术模块 -->
-        <h2>🔢 一、算术模块 (Arithmetic)</h2>
-
-        <h3>📌 实数</h3>
-        <table>
-            <tr><th style="width:25%">考点</th><th>核心公式/性质</th></tr>
-            <tr><td>奇偶性</td><td>奇数±奇数=偶数；偶数±偶数=偶数；奇数×奇数=奇数；偶数×任何整数=偶数</td></tr>
-            <tr><td>质数</td><td>40以内质数：2,3,5,7,11,13,17,19,23,29,31,37<br>🔸 2是唯一的偶质数，1既不是质数也不是合数</td></tr>
-            <tr><td>整除特征</td><td>被2/5整除：看末位；被3/9整除：看各位和；被4/25整除：看末两位</td></tr>
-            <tr><td>最大公约数/最小公倍数</td><td>gcd(a,b) × lcm(a,b) = a × b</td></tr>
-        </table>
-
-        <h3>📌 比与比例</h3>
-        <table>
-            <tr><th>考点</th><th>核心公式/方法</th></tr>
-            <tr><td>连比统一</td><td>若甲:乙=a:b，乙:丙=c:d，则甲:乙:丙= ac : bc : bd</td></tr>
-            <tr><td>增长率</td><td>期末值 = 基期值 × (1+增长率)<sup>n</sup></td></tr>
-            <tr><td>十字交叉法</td><td>用于混合浓度、平均分、利润率等问题</td></tr>
-        </table>
-
-        <h3>📌 绝对值</h3>
-        <table>
-            <tr><th>考点</th><th>核心公式/性质</th></tr>
-            <tr><td>基本性质</td><td>|a| ≥ 0；|a|² = a²；|a| = a 或 -a 取决于a的符号</td></tr>
-            <tr><td>三角不等式</td><td>||a|-|b|| ≤ |a±b| ≤ |a|+|b|</td></tr>
-            <tr><td>几何意义</td><td>|a-b| 表示数轴上a与b的距离</td></tr>
-        </table>
-
-        <!-- 代数模块 -->
-        <h2>🧮 二、代数模块 (Algebra)</h2>
-
-        <h3>📌 整式与分式</h3>
-        <table>
-            <tr><th>考点</th><th>核心公式/定理</th></tr>
-            <tr><td>乘法公式</td><td>(a±b)² = a² ± 2ab + b²； (a+b+c)² = a²+b²+c²+2ab+2ac+2bc<br>a² - b² = (a+b)(a-b)； a³ ± b³ = (a ± b)(a² ∓ ab + b²)</td></tr>
-            <tr><td>因式分解</td><td>提公因式、十字相乘、分组分解、公式法</td></tr>
-            <tr><td>余式定理</td><td>若f(a)=0，则 (x-a) 是 f(x) 的因式</td></tr>
-        </table>
-
-        <h3>📌 函数 / 方程与不等式</h3>
-        <table>
-            <tr><th>考点</th><th>核心公式/性质</th></tr>
-            <tr><td>二次函数顶点</td><td>顶点坐标 ( -b/(2a) , (4ac-b²)/(4a) )，对称轴 x = -b/(2a)</td></tr>
-            <tr><td>均值不等式</td><td>对于正实数a,b： (a+b)/2 ≥ √(ab)  (a=b时取等) ；推广到n个正数</td></tr>
-            <tr><td>一元二次方程求根</td><td>x = [-b ± √(b²-4ac)] / (2a) ；判别式 Δ = b²-4ac</td></tr>
-            <tr><td>韦达定理</td><td>若x₁,x₂为ax²+bx+c=0的根，则 x₁+x₂ = -b/a ， x₁·x₂ = c/a</td></tr>
-            <tr><td>不等式解法</td><td>一元二次不等式( a>0 )口诀：“大于取两边，小于取中间”</td></tr>
-        </table>
-
-        <h3>📌 数列</h3>
-        <table>
-            <tr><th>考点</th><th>核心公式</th></tr>
-            <tr><td>等差数列</td><td>通项 aₙ = a₁ + (n-1)d ； 前n项和 Sₙ = n(a₁+aₙ)/2 = na₁ + n(n-1)d/2</td></tr>
-            <tr><td>等比数列</td><td>通项 aₙ = a₁·qⁿ⁻¹ ； 前n项和 Sₙ = a₁(1-qⁿ)/(1-q) (q≠1)</td></tr>
-            <tr><td>常见求和</td><td>1+2+...+n = n(n+1)/2 ； 1²+2²+...+n² = n(n+1)(2n+1)/6</td></tr>
-        </table>
-
-        <!-- 几何模块 -->
-        <h2>📐 三、几何模块 (Geometry)</h2>
-
-        <h3>📌 平面几何</h3>
-        <table>
-            <tr><th>图形</th><th>核心公式/定理</th></tr>
-            <tr><td>三角形</td><td>面积 S = ½·底·高 = ½ab·sinC；海伦公式 S = √[p(p-a)(p-b)(p-c)]，p为半周长<br>勾股定理：a²+b²=c² (直角三角形)；30°所对直角边=斜边一半</td></tr>
-            <tr><td>四边形</td><td>梯形面积 S = (a+b)h/2 ； 平行四边形 S = 底×高</td></tr>
-            <tr><td>圆与扇形</td><td>圆面积 S = πr² ； 周长 C = 2πr ； 扇形面积 S = (θ/360°)πr² = ½lr (l弧长)</td></tr>
-        </table>
-
-        <h3>📌 解析几何</h3>
-        <table>
-            <tr><th>考点</th><th>核心公式/性质</th></tr>
-            <tr><td>直线方程</td><td>斜截式 y=kx+b ； 一般式 Ax+By+C=0 ； 两点式 (y-y₁)/(y₂-y₁)=(x-x₁)/(x₂-x₁)</td></tr>
-            <tr><td>点到直线距离</td><td>d = |Ax₀+By₀+C| / √(A²+B²)</td></tr>
-            <tr><td>圆的标准方程</td><td>(x-a)²+(y-b)² = r² ， 圆心(a,b) 半径r</td></tr>
-            <tr><td>两直线位置关系</td><td>平行：k₁=k₂且b₁≠b₂ ；垂直：k₁·k₂ = -1</td></tr>
-        </table>
-
-        <h3>📌 立体几何</h3>
-        <table>
-            <tr><th>几何体</th><th>体积 / 表面积公式</th></tr>
-            <tr><td>长方体</td><td>V = a·b·c ； 表面积 S = 2(ab+ac+bc)</td></tr>
-            <tr><td>圆柱</td><td>V = πr²·h ； 侧面积 S侧 = 2πrh ； 表面积 S = 2πr² + 2πrh</td></tr>
-            <tr><td>球体</td><td>V = (4/3)πr³ ； 表面积 S = 4πr²</td></tr>
-        </table>
-
-        <!-- 数据分析模块 -->
-        <h2>📊 四、数据分析 (Data Analysis)</h2>
-
-        <h3>📌 排列组合</h3>
-        <table>
-            <tr><th>考点</th><th>公式 / 模型</th></tr>
-            <tr><td>排列数</td><td>Aₙᵐ = n! / (n-m)!  （顺序有关）</td></tr>
-            <tr><td>组合数</td><td>Cₙᵐ = n! / [m!(n-m)!]  （顺序无关）性质：Cₙᵐ = Cₙⁿ⁻ᵐ</td></tr>
-            <tr><td>常用方法</td><td>相邻问题：捆绑法；不相邻：插空法；相同元素分组：隔板法（名额分配）</td></tr>
-        </table>
-
-        <h3>📌 概率</h3>
-        <table>
-            <tr><th>考点</th><th>公式 / 模型</th></tr>
-            <tr><td>古典概型</td><td>P(A) = 事件A包含的基本事件数 / 总基本事件数</td></tr>
-            <tr><td>加法公式</td><td>P(A∪B) = P(A)+P(B)-P(A∩B)  ；互斥时P(A∪B)=P(A)+P(B)</td></tr>
-            <tr><td>乘法公式</td><td>P(AB) = P(A)·P(B|A) ； 若独立则P(AB)=P(A)P(B)</td></tr>
-            <tr><td>伯努利试验</td><td>n次独立重复试验中恰好成功k次：Cₙᵏ pᵏ (1-p)ⁿ⁻ᵏ</td></tr>
-        </table>
-
-        <h3>📌 数据描述</h3>
-        <table>
-            <tr><th>统计量</th><th>公式</th></tr>
-            <tr><td>平均数</td><td>样本均值 x̄ = (x₁+x₂+...+xₙ)/n</td></tr>
-            <tr><td>方差</td><td>S² = (1/n)∑(xᵢ - x̄)²  （总体方差）； 样本方差分母为n-1</td></tr>
-            <tr><td>标准差</td><td>S = √S²</td></tr>
-        </table>
-
-        <!-- 补充复习建议 + 质数小贴士 -->
-        <hr>
-        <div class="note">
-            <strong>🧠 备考小贴士</strong>：<br>
-            • 质数速记：2是唯一的偶质数；100以内质数可用“分组法”或“筛法”记忆，注意陷阱数 91=7×13，87=3×29，57=3×19。<br>
-            • 均值不等式、韦达定理、解析几何距离公式、排列组合模型是管综高频得分点，务必熟练。<br>
-            • 考试时优先使用特值法、数形结合快速排除，避免硬算。
-        </div>
-
-        <h3 style="margin-top:10px">📁 模块复习建议</h3>
-        <ul>
-            <li><span class="module-badge">算术</span> 重点：质数性质、绝对值三角不等式、比例十字交叉</li>
-            <li><span class="module-badge">代数</span> 重点：二次函数最值、韦达定理、等差等比求和、均值不等式</li>
-            <li><span class="module-badge">几何</span> 重点：圆与直线位置关系、三角形面积公式（海伦）、立体几何基本公式</li>
-            <li><span class="module-badge">数据分析</span> 重点：排列组合模型区分、古典概型、方差计算</li>
-        </ul>
-
-        <div style="background-color:#f1f6fa; border-radius:14px; padding:12px 18px; margin:20px 0">
-            <p style="margin:6px 0">✍️ <strong>目标150分·拆解参考</strong>：数学目标57分（最多错6道），逻辑46分，写作47分。数学控制在60-70分钟内完成，巧解提速，敢于取舍。</p>
-        </div>
-
-        <!-- 提示word兼容性说明 -->
-        <p style="color:#446688; font-size:0.95em">✅ 本清单涵盖管综数学187个考点的核心公式，兼容Microsoft Word（可直接复制粘贴或下载html打开）。</p>
-    </div>
-
-    <!-- 下载按钮区域 -->
-    <div style="display: flex; justify-content: center;">
-        <button class="download-btn" id="downloadWordBtn">
-            ⬇️ 下载Word格式文档 (.doc)
-        </button>
-    </div>
-    <div class="footer-note">
-        ⚡ 点击下载后，用 Microsoft Word 打开即可保留全部样式，方便打印背诵。
-    </div>
-
-    <script>
-        (function() {
-            const downloadBtn = document.getElementById('downloadWordBtn');
-
-            // 获取包含所有核心内容的html结构 (我们只提取 #mathHandbook 内的内容，同时保留整体样式)
-            function getDocHTML() {
-                // 获取当前整个文档中与样式和核心内容相关的部分
-                const styleElem = document.querySelector('style').outerHTML;  // 获取样式
-                const handbookHTML = document.getElementById('mathHandbook').outerHTML;  // 核心卡片
-
-                // 构建一份标准html文档，适应word
-                return `<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>管综数学核心考点_公式清单</title>
-    ${styleElem}
+    <title>LearnMem · 学习笔记</title>
     <style>
-        /* 打印/word专用微调 */
-        body { background: white; padding: 30px; }
-        .document-card { box-shadow: none; border: 1px solid #aaa; }
-        .download-btn { display: none; }  /* 隐藏下载按钮本身 */
+        body {
+            font-family: '微软雅黑', Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            color: #1e3c5c;
+            border-left: 8px solid #b22222;
+            padding-left: 20px;
+        }
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #2b4f7c;
+            margin-top: 0;
+            border-bottom: 2px solid #e1e8f0;
+            padding-bottom: 8px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 12px 0;
+            font-size: 17px;
+        }
+        a {
+            text-decoration: none;
+            color: #1e3c5c;
+            background: #eef3f9;
+            display: block;
+            padding: 12px 18px;
+            border-radius: 12px;
+            transition: 0.2s;
+            border-left: 5px solid #8cb3d9;
+        }
+        a:hover {
+            background: #d4e3fd;
+            transform: translateX(5px);
+        }
+        .note {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
-    ${handbookHTML}
-    <p style="text-align:center; color:#2b5797; margin-top:30px;">—— 管理类联考·数学必备手册 ——</p>
-</body>
-</html>`;
-            }
+    <h1>📘 LearnMem · 管理类联考笔记</h1>
+    
+    <div class="section">
+        <h2>🧮 数学模块</h2>
+        <ul>
+            <li><a href="math/质数考点.html">🔢 质数考点全解（含陷阱数）</a></li>
+            <li><a href="math/管综数学-核心考点与必备公式.html">📐 管综数学·核心公式大全</a></li>
+            <!-- 以后加新的数学笔记，就在这里加一行 -->
+        </ul>
+    </div>
 
-            downloadBtn.addEventListener('click', function() {
-                const fullHTML = getDocHTML();
-                // 创建blob对象，指定MIME类型为application/msword 让浏览器识别为word文档
-                const blob = new Blob([fullHTML], { type: 'application/msword' });
-                const url = window.URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = '管综数学_核心公式.doc';  // .doc 扩展名
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                window.URL.revokeObjectURL(url);
-            });
+    <div class="section">
+        <h2>💬 逻辑模块</h2>
+        <ul>
+            <li><a href="logic/推理规则.html">🔍 逻辑推理核心规则</a></li>
+            <!-- 预留位置 -->
+        </ul>
+    </div>
 
-        })();
-    </script>
+    <div class="section">
+        <h2>📝 写作模块</h2>
+        <ul>
+            <li><a href="writing/论说文模板.html">✍️ 论说文万能结构</a></li>
+            <!-- 预留位置 -->
+        </ul>
+    </div>
 
-    <!-- 附加说明：按钮仅用于下载，保留所有公式内容，符合word兼容格式 -->
+    <div class="section">
+        <h2>🇬🇧 英语二</h2>
+        <ul>
+            <li><a href="english/作文模板.html">📧 英语作文模板</a></li>
+            <!-- 预留位置 -->
+        </ul>
+    </div>
+
+    <div class="note">
+        ⚡ 持续更新中 · 点击链接直接阅读
+    </div>
 </body>
 </html>
