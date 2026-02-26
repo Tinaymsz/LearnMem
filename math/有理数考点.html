@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管综数学·实数专题：概念辨析与判断方法</title>
+    <style>
+        /* 整体样式 —— 兼容Word及现代浏览器 */
+        body {
+            font-family: '微软雅黑', '宋体', Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .document-card {
+            max-width: 1000px;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 18px;
+            padding: 35px 40px;
+            margin-bottom: 25px;
+            border: 1px solid #d0d7de;
+        }
+        h1 {
+            font-size: 32px;
+            color: #1e3c5c;
+            border-left: 10px solid #2b5797;
+            padding-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .subhead {
+            color: #4a6f8e;
+            font-size: 18px;
+            margin-top: -5px;
+            margin-bottom: 25px;
+            padding-left: 30px;
+            border-bottom: 1px dashed #b3c4d1;
+            padding-bottom: 12px;
+        }
+        h2 {
+            font-size: 26px;
+            background-color: #eef3f9;
+            padding: 8px 18px;
+            border-radius: 30px;
+            color: #1e4660;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid #1e3c5c;
+        }
+        h3 {
+            font-size: 22px;
+            margin: 25px 0 15px 0;
+            color: #204b6a;
+            border-bottom: 2px solid #cfdeed;
+            padding-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            background-color: white;
+        }
+        th {
+            background-color: #2b5797;
+            color: white;
+            font-weight: 600;
+            padding: 12px 10px;
+            text-align: left;
+            border: 1px solid #1d3f68;
+        }
+        td {
+            padding: 12px 15px;
+            border: 1px solid #b0c4de;
+            vertical-align: top;
+            background-color: #fdfdfd;
+        }
+        tr:nth-child(even) td {
+            background-color: #f8fafd;
+        }
+        
+        /* 分类树样式 - 使用列表实现完美层级 */
+        .classification-tree {
+            background-color: #f0f5fa;
+            padding: 20px 25px;
+            border-radius: 16px;
+            margin: 20px 0;
+            border: 1px solid #b8cde0;
+            font-size: 18px;
+        }
+        .tree-root {
+            font-weight: 700;
+            color: #1e3c5c;
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+        .tree-ul {
+            list-style-type: none;
+            padding-left: 25px;
+            margin: 5px 0;
+        }
+        .tree-li {
+            margin: 8px 0;
+            position: relative;
+            line-height: 1.6;
+        }
+        .tree-li::before {
+            content: "•";
+            color: #2b5797;
+            font-weight: bold;
+            position: absolute;
+            left: -18px;
+        }
+        .tree-branch {
+            font-weight: 600;
+            color: #113a5e;
+        }
+        .tree-leaf {
+            color: #2c3e50;
+            margin-left: 5px;
+        }
+        .tree-note {
+            color: #5f6b7a;
+            font-style: italic;
+            margin-left: 8px;
+        }
+        
+        .note {
+            background-color: #fef9e7;
+            border-left: 6px solid #f4b742;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .warning {
+            background-color: #fdeaea;
+            border-left: 6px solid #c42e2e;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .flowchart {
+            background-color: #e7f0fa;
+            padding: 20px;
+            border-radius: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            line-height: 2.2;
+            margin: 20px 0;
+            white-space: pre-wrap;
+        }
+        .example-box {
+            background-color: #f0f7ff;
+            border: 1px solid #b8d1f0;
+            border-radius: 14px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+        .example-title {
+            font-weight: 700;
+            color: #113a5e;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        hr {
+            border: 1px solid #cbd6e3;
+            margin: 30px 0;
+        }
+        .download-btn {
+            background: #1e3c5c;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 14px 32px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,40,80,0.3);
+            transition: background 0.15s;
+            border: 1px solid #0f2b41;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background: #2b5797;
+        }
+        .footer-note {
+            color: #5f6b7a;
+            font-size: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .math-symbol {
+            font-family: 'Segoe UI Symbol', 'Arial Unicode MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="document-card" id="realNumberHandbook">
+        <h1>🔢 管理类综合数学·实数专题：概念辨析与判断方法</h1>
+        <div class="subhead">实数分类 · 有理数与无理数 · 三步判断法 · 管综高频考点</div>
+
+        <!-- 一、实数的基本概念与分类 -->
+        <h2>📌 一、实数的基本概念与分类</h2>
+        <p>在管理类联考数学中，实数是整个算术部分的基石。掌握实数的分类，是解决后续所有问题的前提。</p>
+
+        <h3>1. 实数的分类图</h3>
+        <div class="classification-tree">
+            <div class="tree-root">📐 实数</div>
+            <ul class="tree-ul">
+                <li class="tree-li">
+                    <span class="tree-branch">有理数</span> 
+                    <span class="tree-note">(可写成 p/q 的形式，q≠0)</span>
+                    <ul class="tree-ul">
+                        <li class="tree-li">
+                            <span class="tree-branch">整数</span>
+                            <ul class="tree-ul">
+                                <li class="tree-li"><span class="tree-leaf">正整数 (自然数): 1, 2, 3, ...</span></li>
+                                <li class="tree-li"><span class="tree-leaf">0</span></li>
+                                <li class="tree-li"><span class="tree-leaf">负整数: -1, -2, -3, ...</span></li>
+                            </ul>
+                        </li>
+                        <li class="tree-li">
+                            <span class="tree-branch">分数</span>
+                            <ul class="tree-ul">
+                                <li class="tree-li"><span class="tree-leaf">有限小数: 如 0.75, 0.5, 0.125</span></li>
+                                <li class="tree-li"><span class="tree-leaf">无限循环小数: 如 0.333... (1/3), 0.142857142857... (1/7)</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tree-li">
+                    <span class="tree-branch">无理数</span> 
+                    <span class="tree-note">(无限不循环小数)</span>
+                    <ul class="tree-ul">
+                        <li class="tree-li"><span class="tree-leaf">开方开不尽的数: √2, √3, ∛5, √6, √7, √8, √10, ...</span></li>
+                        <li class="tree-li"><span class="tree-leaf">特定常数: π (圆周率, ≈3.14159...), e (自然对数底数, ≈2.71828...)</span></li>
+                        <li class="tree-li"><span class="tree-leaf">人为构造: 0.1010010001... (每两个1之间依次多一个0)</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <h3>2. 核心概念辨析</h3>
+        <ul style="font-size: 17px; line-height: 1.8;">
+            <li><strong>有理数：</strong> 任何可以写成 p/q（其中 p, q 为整数，且 q ≠ 0）形式的数。它包括：
+                <ul>
+                    <li><strong>整数：</strong> ..., -2, -1, 0, 1, 2, ...</li>
+                    <li><strong>分数：</strong> 1/3, 4/5 等。</li>
+                    <li><strong>有限小数：</strong> 如 0.75。</li>
+                    <li><strong>无限循环小数：</strong> 如 0.333...（即 1/3）。</li>
+                </ul>
+            </li>
+            <li><strong>无理数：</strong> 无限不循环小数。它无法写成精确的分数形式。常见来源有：
+                <ul>
+                    <li><strong>开方开不尽的数：</strong> √2, √3, ∛5 等。</li>
+                    <li><strong>特定常数：</strong> π（圆周率）、e（自然对数底数）等。</li>
+                    <li><strong>人为构造的数：</strong> 如 0.1010010001...（每两个1之间依次多一个0）。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="warning">
+            <strong>⚠️ 特别提醒：</strong><br>
+            • <strong>1 既不是质数，也不是合数。</strong>（虽然这不属于分类，但极易混淆）<br>
+            • <strong>带根号的数不一定是无理数。</strong> 例如 √4 = 2，是有理数。<br>
+            • <strong>含 π 的数不一定是无理数。</strong> 例如 π/π = 1，是有理数。
+        </div>
+
+        <!-- 二、如何判断一个数是有理数还是无理数？ -->
+        <h2>🧠 二、如何判断一个数是有理数还是无理数？</h2>
+        <p>考试中不会直接给你一个无限小数，而是给你一个表达式。你需要掌握一套清晰的判断流程。</p>
+
+        <h3>第一步：先化简，再看结果</h3>
+        <p>这是最重要的一步。不要被原始形式迷惑，一定要进行化简：</p>
+        <ul>
+            <li>合并同类项</li>
+            <li>约分</li>
+            <li>计算根号</li>
+            <li>去掉括号</li>
+        </ul>
+        <p>只有看到<strong>最简形式</strong>，才能做出正确判断。</p>
+
+        <h3>第二步：掌握运算规则（黄金法则）</h3>
+        <p>有理数和无理数进行运算时，结果是有规律的。你需要熟记下表：</p>
+
+        <table>
+            <tr><th>运算类型</th><th>表达式</th><th>结果</th><th>举例</th><th>关键陷阱</th></tr>
+            <tr><td rowspan="3"><strong>加减</strong></td><td>有理数 ± 有理数</td><td><strong>有理数</strong></td><td>1 + 0.5 = 1.5</td><td></td></tr>
+            <tr><td>有理数 ± 无理数</td><td><strong>无理数</strong></td><td>1 + √2</td><td></td></tr>
+            <tr><td>无理数 ± 无理数</td><td><strong>不确定</strong></td><td>√2 + √3 仍为无理数<br>√2 - √2 = 0 变为有理数</td><td><strong>关键在于是否能合并或抵消。</strong></td></tr>
+            <tr><td rowspan="3"><strong>乘法</strong></td><td>有理数 × 有理数</td><td><strong>有理数</strong></td><td>2 × 3 = 6</td><td></td></tr>
+            <tr><td><strong>非零</strong>有理数 × 无理数</td><td><strong>无理数</strong></td><td>3√2</td><td><strong>如果那个有理数是 0</strong>：0 × √2 = 0，结果是有理数。</td></tr>
+            <tr><td>无理数 × 无理数</td><td><strong>不确定</strong></td><td>√2 × √3 = √6 仍为无理数<br>√2 × √8 = √16 = 4 变为有理数</td><td><strong>关键在于根号相乘后是否能开出整数。</strong></td></tr>
+            <tr><td><strong>除法</strong></td><td colspan="4">（可转化为乘法处理，规则同上）举例：√12 ÷ √3 = √4 = 2，根号相除后可能开出整数。</td></tr>
+        </table>
+
+        <h3>第三步：快速判断流程图</h3>
+        <div class="flowchart">
+1. 拿到一个数（或表达式）
+    ↓
+2. 进行化简（合并、约分、开方...）
+    ↓
+3. 观察化简后的结果：
+   ├── 结果中不含 π 且不含开不尽的根号 → 有理数
+   └── 结果中含有 π 或含有开不尽的根号 (如 √2, √3) → 进入下一步
+    ↓
+4. 检查无理部分能否被消灭？
+   ├── 能消灭 (如 π÷π, √2×√2, √5−√5) → 有理数
+   └── 不能消灭 → 无理数
+        </div>
+
+        <!-- 三、实战演练 -->
+        <h2>✍️ 三、实战演练</h2>
+        <p>学了方法，我们来练习几个典型的管综数学题：</p>
+
+        <div class="example-box">
+            <div class="example-title">📌 例1：判断 √3 / 2</div>
+            <ul>
+                <li><strong>化简：</strong> 已是最简，含有 √3。</li>
+                <li><strong>检查：</strong> 有理数 2 无法消灭无理数 √3。</li>
+                <li><strong>结论：</strong> <strong>无理数</strong>。</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <div class="example-title">📌 例2：判断 √9 + π</div>
+            <ul>
+                <li><strong>化简：</strong> √9 = 3，原式 = 3 + π。</li>
+                <li><strong>检查：</strong> 含有 π，且没有运算能消掉它。</li>
+                <li><strong>结论：</strong> <strong>无理数</strong>。</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <div class="example-title">📌 例3：判断 √12 / √3</div>
+            <ul>
+                <li><strong>化简：</strong> √12 ÷ √3 = √(12/3) = √4 = 2。</li>
+                <li><strong>检查：</strong> 根号被开方开出去了，变成了整数。</li>
+                <li><strong>结论：</strong> <strong>有理数</strong>。</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <div class="example-title">📌 例4：判断 2√5 + 3√5</div>
+            <ul>
+                <li><strong>化简：</strong> 合并同类项 = 5√5。</li>
+                <li><strong>检查：</strong> 含有 √5，系数 5 无法消灭它。</li>
+                <li><strong>结论：</strong> <strong>无理数</strong>。</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <div class="example-title">📌 例5：判断 2√5 × 3√5</div>
+            <ul>
+                <li><strong>化简：</strong> 2 × 3 × √5 × √5 = 6 × 5 = 30。</li>
+                <li><strong>检查：</strong> 根号被乘没了。</li>
+                <li><strong>结论：</strong> <strong>有理数</strong>。</li>
+            </ul>
+        </div>
+
+        <!-- 总结 -->
+        <hr>
+        <div class="note">
+            <strong>📚 实数专题核心要点回顾</strong><br>
+            • 实数 = 有理数（整数+分数） + 无理数（无限不循环）<br>
+            • 判断流程：<strong>化简 → 看有无π/不尽根号 → 检查能否消灭无理部分</strong><br>
+            • 运算不确定情形：无理数±无理数、无理数×无理数、无理数÷无理数，必须算出最终形式才能判断。
+        </div>
+
+        <p style="color: #4a5e75; font-size: 15px; text-align: right; margin-top: 25px;">—— 管综数学·实数专题 完全版 ——</p>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <button class="download-btn" id="downloadWordBtn">
+            ⬇️ 下载 Word 格式文档 (.doc)
+        </button>
+    </div>
+    <div class="footer-note">
+        ⚡ 点击下载后使用 Microsoft Word 打开，保留全部样式，方便打印背诵。<br>
+        ✅ 分类图已用HTML列表重构，任何设备上层级都清晰可见。
+    </div>
+
+    <script>
+        (function() {
+            const downloadBtn = document.getElementById('downloadWordBtn');
+
+            function getFullHTML() {
+                const styleElem = document.querySelector('style').outerHTML;
+                const cardHTML = document.getElementById('realNumberHandbook').outerHTML;
+
+                return `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>管综数学·实数专题</title>
+    ${styleElem}
+    <style>
+        body { background: white; padding: 30px; }
+        .document-card { box-shadow: none; border: 1px solid #999; }
+        .download-btn, .footer-note { display: none; }
+    </style>
+</head>
+<body>
+    ${cardHTML}
+    <p style="text-align:center; color: #1e3c5c; margin-top:30px;">—— 管综数学·实数专题 打印版 ——</p>
+</body>
+</html>`;
+            }
+
+            downloadBtn.addEventListener('click', function () {
+                const fullHtml = getFullHTML();
+                const blob = new Blob([fullHtml], { type: 'application/msword' });
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = '管综数学_实数专题.doc';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+            });
+        })();
+    </script>
+</body>
+</html>
