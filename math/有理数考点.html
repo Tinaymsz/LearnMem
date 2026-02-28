@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管综数学·实数专题：概念辨析与判断方法</title>
+    <title>管综数学·实数专题：概念辨析与判断方法（含循环小数例题）</title>
     <style>
         /* 整体样式 —— 兼容Word及现代浏览器 */
         body {
@@ -59,6 +59,12 @@
             color: #204b6a;
             border-bottom: 2px solid #cfdeed;
             padding-bottom: 5px;
+        }
+        h4 {
+            font-size: 19px;
+            margin: 20px 0 10px 0;
+            color: #2b4f7c;
+            font-weight: 600;
         }
         table {
             width: 100%;
@@ -170,6 +176,19 @@
             font-size: 18px;
             margin-bottom: 8px;
         }
+        .derivation-box {
+            background-color: #f5f0e6;
+            border-left: 6px solid #b8860b;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .step-item {
+            margin: 15px 0;
+            padding-left: 20px;
+            border-left: 3px solid #2b5797;
+        }
         hr {
             border: 1px solid #cbd6e3;
             margin: 30px 0;
@@ -204,12 +223,18 @@
         .math-symbol {
             font-family: 'Segoe UI Symbol', 'Arial Unicode MS', sans-serif;
         }
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
     <div class="document-card" id="realNumberHandbook">
         <h1>🔢 管理类综合数学·实数专题：概念辨析与判断方法</h1>
-        <div class="subhead">实数分类 · 有理数与无理数 · 三步判断法 · 管综高频考点</div>
+        <div class="subhead">实数分类 · 有理数与无理数 · 三步判断法 · 循环小数典型例题</div>
 
         <!-- 一、实数的基本概念与分类 -->
         <h2>📌 一、实数的基本概念与分类</h2>
@@ -321,8 +346,8 @@
    └── 不能消灭 → 无理数
         </div>
 
-        <!-- 三、实战演练 -->
-        <h2>✍️ 三、实战演练</h2>
+        <!-- 三、实战演练（基础题） -->
+        <h2>✍️ 三、实战演练（基础题）</h2>
         <p>学了方法，我们来练习几个典型的管综数学题：</p>
 
         <div class="example-box">
@@ -370,16 +395,72 @@
             </ul>
         </div>
 
+        <!-- 新增：四、高频考题深析（循环小数与有理数） -->
+        <h2>🔥 四、高频考题深析：循环小数与有理数</h2>
+        <p>循环小数是有理数的一种重要形式，管综中常考它与最简分数、整数性质的结合。</p>
+
+        <div class="example-box" style="background-color: #fef4e8; border-left: 8px solid #d45d00;">
+            <div class="example-title">📌 经典例题（源自管综真题思路）</div>
+            <p style="font-size: 18px; font-weight: 500;">有一个数 0.ab（ab上面带横线，表示ab两位无限循环），化简后分子与分母之和为40，求 a + b 的值。</p>
+        </div>
+
+        <h3>🧩 第一步：化循环小数为分数</h3>
+        <div class="derivation-box">
+            <p><strong>原理推导（无需死记）：</strong></p>
+            <div class="step-item">
+                <p>设 x = 0.ab（ab循环），循环节长度 = 2。</p>
+                <p>乘以 10² = 100 使循环部分对齐：100x = ab.ab（ab循环），其中ab表示两位数 10a+b。</p>
+                <p>两式相减：100x - x = (ab.ab循环) - (0.ab循环)</p>
+                <p>99x = ab（循环小数部分完全抵消）</p>
+                <p>→ x = ab/99 = (10a + b)/99</p>
+            </div>
+            <p><span class="highlight">核心结论</span>：循环节长度为 n，分母就是 10ⁿ - 1（即 n 个 9）。本题中分母为 99。</p>
+        </div>
+
+        <h3>⚙️ 第二步：最简分数与公约数分析</h3>
+        <p>设 d 等于 10a+b 与 99 的最大公约数，则化简后的分数为：</p>
+        <p style="text-align: center; font-size: 18px;">分子 = (10a+b) ÷ d，分母 = 99 ÷ d</p>
+        <p>根据题意：分子 + 分母 = 40，即：</p>
+        <p style="text-align: center; font-size: 18px;">(10a+b) ÷ d + 99 ÷ d = 40</p>
+        <p style="text-align: center; font-size: 18px;">→ 10a + b + 99 = 40 × d</p>
+        <p style="text-align: center; font-size: 18px;">→ 10a + b = 40d - 99</p>
+
+        <h3>🔍 第三步：确定 d 的可能取值</h3>
+        <p>10a + b 是两位数（a和b为0-9整数，且a可为0），取值范围：0 ≤ 10a+b ≤ 99。</p>
+        <p>代入得：0 ≤ 40d - 99 ≤ 99</p>
+        <p>→ 99 ≤ 40d ≤ 198</p>
+        <p>→ 2.475 ≤ d ≤ 4.95，d为正整数 → d = 3 或 d = 4。</p>
+
+        <h3>✅ 第四步：分类验证</h3>
+        <table>
+            <tr><th>d 取值</th><th>10a+b = 40d-99</th><th>a, b 值</th><th>验证最大公约数</th><th>是否符合</th></tr>
+            <tr><td><strong>d = 3</strong></td><td>40×3 - 99 = 120 - 99 = 21</td><td>a=2, b=1</td><td>21与99的最大公约数是3 ✔️</td><td>✔️ 化简后 7/33，和40</td></tr>
+            <tr><td><strong>d = 4</strong></td><td>40×4 - 99 = 160 - 99 = 61</td><td>a=6, b=1</td><td>61与99的最大公约数是1 ≠4 ❌</td><td>❌ 与假设d=4矛盾</td></tr>
+        </table>
+
+        <h3>🎯 第五步：得出答案</h3>
+        <p>唯一解：a = 2, b = 1，所以：</p>
+        <p style="text-align: center; font-size: 24px; font-weight: 700; color: #b22222;">a + b = 3</p>
+
+        <div class="note">
+            <strong>📌 本题考点总结：</strong><br>
+            • <strong>循环小数转分数</strong>：0.ab（ab循环） = (10a+b)/99（分母为 10ⁿ-1）<br>
+            • <strong>最简分数条件</strong>：分子分母同时除以它们的最大公约数<br>
+            • <strong>整数方程与范围分析</strong>：利用 0 ≤ 10a+b ≤ 99 限制d的可能值<br>
+            • <strong>验证环节不可少</strong>：算出(a,b)后必须检查最大公约数是否与假设的d一致
+        </div>
+
         <!-- 总结 -->
         <hr>
         <div class="note">
             <strong>📚 实数专题核心要点回顾</strong><br>
             • 实数 = 有理数（整数+分数） + 无理数（无限不循环）<br>
             • 判断流程：<strong>化简 → 看有无π/不尽根号 → 检查能否消灭无理部分</strong><br>
-            • 运算不确定情形：无理数±无理数、无理数×无理数、无理数÷无理数，必须算出最终形式才能判断。
+            • 运算不确定情形：无理数±无理数、无理数×无理数、无理数÷无理数，必须算出最终形式才能判断。<br>
+            • 循环小数是有理数，化分数时分母为 10ⁿ-1（n为循环节长度）。
         </div>
 
-        <p style="color: #4a5e75; font-size: 15px; text-align: right; margin-top: 25px;">—— 管综数学·实数专题 完全版 ——</p>
+        <p style="color: #4a5e75; font-size: 15px; text-align: right; margin-top: 25px;">—— 管综数学·实数专题 完全版（含循环小数例题）——</p>
     </div>
 
     <div style="display: flex; justify-content: center;">
@@ -389,7 +470,7 @@
     </div>
     <div class="footer-note">
         ⚡ 点击下载后使用 Microsoft Word 打开，保留全部样式，方便打印背诵。<br>
-        ✅ 分类图已用HTML列表重构，任何设备上层级都清晰可见。
+        ✅ 所有数学符号已改为纯文本，"最大公约数"已用中文表述。
     </div>
 
     <script>
@@ -404,7 +485,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>管综数学·实数专题</title>
+    <title>管综数学·实数专题（含循环小数例题）</title>
     ${styleElem}
     <style>
         body { background: white; padding: 30px; }
@@ -425,7 +506,7 @@
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
-                link.download = '管综数学_实数专题.doc';
+                link.download = '管综数学_实数专题_含循环小数例题.doc';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
